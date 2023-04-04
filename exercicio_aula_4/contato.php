@@ -1,8 +1,8 @@
 <?php
 
-$nome = $_POST['name'];
+$nome = $_POST['id=name'];
 
-$email = $_POST['email'];
+$email = $_POST['id=email'];
 
-echo array('name'=>$nome, 'email'=>$email);
+echo $nome + "," + $email;
 ?>

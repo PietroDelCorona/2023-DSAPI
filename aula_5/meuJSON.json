@@ -1,0 +1,14 @@
+{
+    "nome": "Pietro" ,
+        "idade": 29 ,
+        "altura": 1.75 ,
+        "aluno": true ,
+        "formaturas": [ 2006, 2013, 2017] ,
+        "cursos": [ "Técnico", "Graduação", "Mestrado"] ,
+        "cnh": { "numero": "123456", "categoria": "AB"},
+        "filhos": [
+            {"nome": "Jose", "idade": 10},
+            {"nome": "Julia", "idade": 14}
+        ],
+        "endereco": null
+}
