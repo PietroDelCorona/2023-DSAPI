@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSAPI - Aula01</title>
+</head>
+<body>
+
+    <div id="minhaDiv">
+        oi
+    </div>
+    <script>
+        //document.getElementById("minhaDiv").innerHTML = "Olá <hr>"
+
+        var minhaDiv =document.getElementById("minhaDiv")
+        var conteudo =minhaDiv.innerHTML;
+        conteudo =conteudo + "galerinha<hr>"
+        minhaDiv.innerHTML = conteudo;
+        
+        document.write("Bom dia <b>pesssoal</b");
+        window.alert("Aula01 de DSAPI");
+        console.log("Este é um log do nosso site");
+    </script>
+
+
+<hr>
+
+<div>
+    <input type="text" id="txtNome" placeholder="Nome do Produto">
+    <input type="number" id="txtPreco" placeholder="Preço do Produto">
+    <input type="button" onclick="adicionar()" id="btnAdicionar" value="Adicionar">  
+    
+</div>
+
+
+<div id="divlista"></div>
+
+<script>
+    function adicionar(){
+        var txtNome = document.getElementById("txtNome");
+        var nome = document.getElementById("txtNome").value;
+        var preco = document.getElementById("txtPreco").value;
+        var divlista = document.getElementById("divlista");
+        divlista.innerHTML += nome + " - " + preco + "<br>";
+        txtNome.value ="";
+
+    }
+</script>
+
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02 - DSAPI</title>
+</head>
+<body>
+    
+    <form id="meuForm" action="salvar.php" onsubmit="return validar()">
+        <input type="text" id="txtValor">
+        <input type="submit" value="Salvar">
+    </form>
+    <p id="info"></p>
+
+    <hr>
+
+    <button onclick="lerObjeto()">Ler Objeto</button>
+    <div id="divObjeto"></div>
+
+    <hr>
+
+    <h3>Exercício do cálculo da Área do Retângulo:</h3>
+
+   
+    <input type="number" id="valorBase" placeholder="Valor da base">
+    <input type="number" id="valorAltura" placeholder="Valor da altura">
+    <button onclick="calcularArea()">Calcular Valor!</button>
+    <div id="divArea"></div>
+   
+
+    <script src="script.js"></script>
+</body>
+</html>
