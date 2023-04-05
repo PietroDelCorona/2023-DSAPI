@@ -1,8 +1,6 @@
 <?php
 
-$nome = $_POST['id=name'];
+echo $_POST["name"];
 
-$email = $_POST['id=email'];
-
-echo $nome + "," + $email;
+echo $_POST["email"];
 ?>
