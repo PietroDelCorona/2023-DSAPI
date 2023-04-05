@@ -13,7 +13,6 @@ function mostrar(){
             }
         }
     }
-    var url = "contato.php?" + $("#divResposta").val();
-    xhttp.open("GET", url, true);
+    xhttp.open("GET", "contato.txt", true);
     xhttp.send();
 }
