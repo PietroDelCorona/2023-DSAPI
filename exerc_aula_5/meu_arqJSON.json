@@ -1,0 +1,15 @@
+{
+    "nome": "Fernando" ,
+    "idade": 33,
+    "altura": 1.92 ,
+    "aluno": false,
+    "cursos": ["Graduação", "Mestrado", "Doutorado"],
+    "formaturas": [2014, 2016, 2020],
+    "cnh": {"numero": "5895481", "categoria": "B"},
+    "filhos": [
+        {"nome":"Dário", "idade": 14},
+        {"nome":"Marcela", "idade": 8}
+    ],
+    "endereco": "Rua B, 8567" 
+
+}
