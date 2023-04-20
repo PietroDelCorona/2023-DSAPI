@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lista_produtos>
+    <produto>
+        <id>1</id>
+        <nome>Pepsi</nome>
+        <preco>5.99</preco>
+    </produto>
+    <produto>    
+        <id>2</id>
+        <nome>Coca-cola</nome>
+        <preco>7.99</preco>
+    </produto>
+    <produto>    
+        <id>3</id>
+        <nome>Arroz</nome>
+        <preco>3.95</preco>
+    </produto>
+    <produto>    
+        <id>4</id>
+        <nome>Banana</nome>
+        <preco>7.65</preco>
+    </produto>
+    <produto>    
+        <id>5</id>
+        <nome>Tomate</nome>
+        <preco>4.85</preco>
+    </produto>    
+</lista_produtos>
