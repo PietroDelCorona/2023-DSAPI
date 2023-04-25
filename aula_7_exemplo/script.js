@@ -7,7 +7,7 @@ function ler(){
             var dadosXml = this.responseXML;
             var produtos = dadosXml.getElementsByTagName("produto");
             document.write("<table border='1'>");
-            document.write("     <tr>");
+            document.write("     <tr> ");
             document.write("   <th>Id</th>");
             document.write("   <th>Nome</th>");
             document.write("   <th>Preço</th>");
