@@ -11,7 +11,7 @@ function ler(){
             document.write("   <th>Id</th>");
             document.write("   <th>Nome</th>");
             document.write("   <th>Preço</th>");
-            document.write("    </tr");
+            document.write("    </tr>");
             for (i = 0; i < produtos.length; i++) {
                 document.write("   <tr>");
                 var id = produtos[i].getElementsByTagName("id");
