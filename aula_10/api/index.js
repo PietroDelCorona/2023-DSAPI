@@ -131,7 +131,7 @@ servidor.del('/clientes/:idCliente', (req,res, next) => {
         if( !dados ){
             return res.send(new errors.BadRequestError('Cliente não encontrado'));
         }
-        res.send('Cliente não encontrado');
+        res.send('Cliente deletado');
     }, next);
 });
 
