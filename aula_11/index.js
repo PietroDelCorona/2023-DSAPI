@@ -307,3 +307,56 @@ servidor.del('/produtos/:idProd', (req,res, next) => {
         res.send('Produto não encontrado');
     }, next);    
 });
+
+servidor.get('/pedidos_produtos/:idPedidosProdutos', (req,res, next) => {
+    const idOrder_Product = req.params.idPedidosProdutos;
+    knex('pedidos_produtos')
+        .join('id', 'pedidos', idOrder)
+        .join('id', 'produtos', idProduct)
+        .where( 'id', idOrder_Product)
+        .first()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send(dados);
+    }, next);    
+});
+
+servidor.post('/pedidos_produtos', (req,res, next) => {
+    knex('pedidos_produtos')
+        .insert(req.body)
+        .then( (dados) => {
+        res.send(dados);
+    }, next);    
+});
+
+servidor.put('/pedidos_produtos/:idPedidosProdutos', (req,res, next) => {
+    const idOrder_Product = req.params.idPedidosProdutos;
+    knex('pedidos_produtos')
+        .join('id', 'pedidos', idOrder)
+        .join('id', 'produtos', idProduct)
+        .where( 'id', idOrder_Product)
+        .update(req.body)
+        .then( (dados) => {
+        if( !dados ){
+            return res.send( new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto Atualizado');
+    }, next);    
+});
+
+servidor.del('/pedidos_produtos/:idPedidosProdutos', (req,res, next) => {
+    const idOrder_Product = req.params.idPedidosProdutos;
+    knex('pedidos_produtos')
+        .join('id', 'pedidos', idOrder)
+        .join('id', 'produtos', idProduct)        
+        .where( 'id', idOrder_Product)
+        .delete()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto não encontrado');
+    }, next);    
+});
