@@ -111,6 +111,56 @@ servidor.del('/cidades/:idCidade', (req,res, next) => {
     }, next);    
 });
 
+servidor.get('/clientes/:idCliente', (req,res, next) => {
+    const idClient = req.params.idCliente;
+    knex('clientes')
+    .join('id', 'cidades', idCity)
+        .where( 'id', idClient)
+        .first()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send(dados);
+    }, next);    
+});
+
+servidor.post('/clientes', (req,res, next) => {
+    knex('cidades')
+        .insert(req.body)
+        .then( (dados) => {
+        res.send(dados);
+    }, next);    
+});
+
+servidor.put('/clientes/:idCliente', (req,res, next) => {
+    const idClient = req.params.idCliente;
+    knex('clientes')
+        .join('id', 'cidades', idCity)
+        .where( 'id', idClient)
+        .update(req.body)
+        .then( (dados) => {
+        if( !dados ){
+            return res.send( new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto Atualizado');
+    }, next);    
+});
+
+servidor.del('/clientes/:idCliente', (req,res, next) => {
+    const idClient = req.params.idCliente;
+    knex('clientes')
+        .join('id', 'cidades', idCity)
+        .where( 'id', idClient)
+        .delete()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto não encontrado');
+    }, next);    
+});
+
 servidor.get('/categorias/:idCategoria', (req,res, next) => {
     const idCat = req.params.idCategoria;
     knex('categorias')
