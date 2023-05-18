@@ -161,6 +161,56 @@ servidor.del('/clientes/:idCliente', (req,res, next) => {
     }, next);    
 });
 
+servidor.get('/pedidos/:idPedido', (req,res, next) => {
+    const idOrder = req.params.idPedido;
+    knex('pedidos')
+    .join('id', 'clientes', idClient)
+        .where( 'id', idOrder)
+        .first()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send(dados);
+    }, next);    
+});
+
+servidor.post('/pedidos', (req,res, next) => {
+    knex('pedidos')
+        .insert(req.body)
+        .then( (dados) => {
+        res.send(dados);
+    }, next);    
+});
+
+servidor.put('/pedidos/:idPedido', (req,res, next) => {
+    const idOrder = req.params.idPedido;
+    knex('pedidos')
+        .join('id', 'clientes', idClient)
+        .where( 'id', idOrder)
+        .update(req.body)
+        .then( (dados) => {
+        if( !dados ){
+            return res.send( new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto Atualizado');
+    }, next);    
+});
+
+servidor.del('/pedidos/:idPedido', (req,res, next) => {
+    const idOrder = req.params.idPedido;
+    knex('pedidos')
+        .join('id', 'clientes', idClient)
+        .where( 'id', idOrder)
+        .delete()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto não encontrado');
+    }, next);    
+});
+
 servidor.get('/categorias/:idCategoria', (req,res, next) => {
     const idCat = req.params.idCategoria;
     knex('categorias')
