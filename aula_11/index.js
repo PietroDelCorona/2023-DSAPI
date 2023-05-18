@@ -63,3 +63,97 @@ servidor.get('/pedidos_produtos', (req,res, next) => {
         res.send(dados);
     })
 });
+
+servidor.get('/cidades/:idCidade', (req,res, next) => {
+    const idCity = req.params.idCidade;
+    knex('cidades')
+        .where( 'id', idCity)
+        .first()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send(dados);
+    }, next);    
+});
+
+servidor.post('/cidades', (req,res, next) => {
+    knex('cidades')
+        .insert(req.body)
+        .then( (dados) => {
+        res.send(dados);
+    }, next);    
+});
+
+servidor.put('/cidades/:idCidade', (req,res, next) => {
+    const idCity = req.params.idCidade;
+    knex('cidades')
+        .where( 'id', idCity)
+        .update(req.body)
+        .then( (dados) => {
+        if( !dados ){
+            return res.send( new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto Atualizado');
+    }, next);    
+});
+
+servidor.del('/cidades/:idCidade', (req,res, next) => {
+    const idCity = req.params.idCidade;
+    knex('cidades')
+        .where( 'id', idCity)
+        .delete()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto não encontrado');
+    }, next);    
+});
+
+servidor.get('/categorias/:idCategoria', (req,res, next) => {
+    const idCat = req.params.idCategoria;
+    knex('categorias')
+        .where( 'id', idCat)
+        .first()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send(dados);
+    }, next);    
+});
+
+servidor.post('/categorias', (req,res, next) => {
+    knex('categorias')
+        .insert(req.body)
+        .then( (dados) => {
+            res.send(dados);            
+    }, next);
+});
+
+servidor.put('/categorias/:idCategoria', (req,res, next) => {
+    const idCat = req.params.idCategoria;
+    knex('categorias')
+        .where( 'id', idCat)
+        .update(req.body)
+        .then( (dados) => {
+        if( !dados ){
+            return res.send( new errors.BadRequestError('Cliente não encontrado'));
+        }
+        res.send('Cliente Atualizado');
+    }, next);
+});
+
+servidor.del('/categorias/:idCategoria', (req,res, next) => {
+    const idCat = req.params.idCategoria;
+    knex('categorias')
+        .where( 'id', idCat)
+        .delete()
+        .then( (dados) => {
+        if( !dados ){
+            return res.send(new errors.BadRequestError('Produto não encontrado'));
+        }
+        res.send('Produto não encontrado');
+    }, next);    
+});
