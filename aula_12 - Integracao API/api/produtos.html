@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+    <h1>Interface API</h1>
+    
+    <form action="http://localhost:8001/produtos" method="POST">
+        
+        <input name="nome" type="text" placeholder="Nome do Produto">
+
+        <input name="preco" type="text" placeholder="Preço do Produto">
+
+        <input type="submit" value="Salvar"> <br>
+        
+    </form>
+    
+    <hr>
+
+    <button id="btnAtualizar" onclick="ler()">Atualizar</button>
+    
+    <div id="status"></div>
+
+    <table border="1" id="tblProdutos">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+        </tr>
+
+    </table>
+
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
