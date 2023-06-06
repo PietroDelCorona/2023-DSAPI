@@ -9,15 +9,15 @@
 <body>
     <h1>Interface API</h1>
     
-    <form action="http://localhost:8001/produtos" method="POST">
+    <!-- <form action="http://localhost:8001/produtos" method="POST"> -->
         
-        <input name="nome" type="text" placeholder="Nome do Produto">
+        <input name="nome" type="text" id="txtNome" placeholder="Nome do Produto">
 
-        <input name="preco" type="text" placeholder="Preço do Produto">
+        <input name="preco" type="text" id="txtPreco" placeholder="Preço do Produto">
 
-        <input type="submit" value="Salvar"> <br>
+        <input type="button" onclick="add()" value="Salvar"> <br>
         
-    </form>
+    <!-- </form> -->
     
     <hr>
 
