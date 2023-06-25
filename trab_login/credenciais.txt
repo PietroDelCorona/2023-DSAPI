@@ -1,0 +1,3 @@
+ID Client: 337146558167-1553oktp92a1oagq41jeislvuba3eilv.apps.googleusercontent.com
+
+chave_secreta : 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
